@@ -23,5 +23,5 @@
 {% endblock boot_target %}
 
 {% block boot_commands %}
-    commands: {{ target_boot_commands|default("norflash") }}
+    commands: {{ target_boot_commands|default("nfs") }}
 {% endblock boot_commands %}
