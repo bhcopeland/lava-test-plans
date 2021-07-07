@@ -5,10 +5,4 @@
 {% set OVERLAY_KSELFTEST_URL_COMP = OVERLAY_KSELFTEST_URL_COMP|default("xz") %}
 {% set OVERLAY_PERF_URL_FORMAT = OVERLAY_PERF_URL_FORMAT|default("tar") %}
 {% set OVERLAY_PERF_URL_COMP = OVERLAY_PERF_URL_COMP|default("xz") %}
-{% set RAMDISK_URL = RAMDISK_URL|default("http://213.146.155.21:9001/initrd.img-5.9.0-0.bpo.5-arm64" %}
-{% set RAMDISK_URL_COMP = RAMDISK_URL_COMP|default("gz") %}
 
-{% block context %}
-  {{ super() }}
-  boot_character_delay: 100
-{% endblock context %}

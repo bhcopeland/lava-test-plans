@@ -3,6 +3,8 @@
 
 {% set DEPLOY_OS = DEPLOY_OS|default("oe") %}
 {% set ROOTFS_URL_COMP = ROOTFS_URL_COMP|default("xz") %}
+{% set RAMDISK_URL_COMP = RAMDISK_URL_COMP|default("gz") %}
+{% set RAMDISK_URL = RAMDISK_URL|default("http://213.146.155.21:9001/initrd.img-5.9.0-0.bpo.5-arm64") %}
 
 {% set auto_login = true %}
 {% set boot_method = "grub" %}
@@ -10,6 +12,8 @@
 {% set use_context = true %}
 
 {% block context %}
+  {{ super() }}
+  boot_character_delay: 100
 {% endblock context %}
 
 {% block device_type %}fx700{% endblock %}
